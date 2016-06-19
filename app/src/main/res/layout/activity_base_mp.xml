@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/navigation"/>
+
+    <FrameLayout
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <include
+        layout="@layout/mini_player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/navigation"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp" />
+
+    <!-- 戻るボタン -->
+    <ImageButton
+        android:id="@+id/button_header_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="left|top"
+        android:background="@drawable/ic_back"
+        android:visibility="visible"/>
+    <!-- 進むボタン -->
+    <ImageButton
+        android:id="@+id/button_header_next"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/button_header_back"
+        android:background="@drawable/ic_redo"
+        android:visibility="visible"/>
+
+</RelativeLayout>
